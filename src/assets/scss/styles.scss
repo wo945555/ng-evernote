@@ -1,0 +1,18 @@
+/* You can add global styles to this file, and also import other style files */
+@import "color";
+
+$button-bg: $green;
+$color: $white;
+
+// 去除搜索框右侧的x
+input[type=search]::-webkit-search-cancel-button{
+    -webkit-appearance: none;
+}
+
+.button {
+    background-color: $button-bg;
+    color: $color;
+    border-radius: 4px;
+    user-select: none;
+    cursor: pointer;
+}

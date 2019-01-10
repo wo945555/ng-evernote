@@ -1,0 +1,12 @@
+<section id="nav">
+  <app-search></app-search>
+  <div class="add">
+    <img class="add-icon" src="/assets/img/add.png" alt="add">New Note
+  </div>
+  <ul class="list">
+    <li *ngFor="let item of items">
+      <img class="list-icon" [src]="item.icon" alt="item.text">
+      {{item.text }}
+    </li>
+  </ul>
+</section>

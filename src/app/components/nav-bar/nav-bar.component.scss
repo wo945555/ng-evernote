@@ -1,0 +1,45 @@
+
+$addSize: 30px;
+$listSize: 20px;
+$listHeight: 40px;
+
+%marginLeft {
+  margin-left: 24px;
+}
+%active {
+  background-color: #404040;
+}
+%hover {
+  background-color: #333;
+}
+
+#nav {
+  width: 241px;
+  height: 100vh;
+  padding-top: 30px;
+  background: #1a1a1a;
+  color: #fff;
+}
+.search {
+  @extend %marginLeft;
+}
+.add {
+  @extend %marginLeft;
+}
+.add-icon {
+  height: $addSize;
+  width: $addSize;
+  margin: 0 12px -12px 0;
+}
+.list {
+  @extend %marginLeft;
+  list-style: none;
+}
+.list li {
+  height: $listHeight;
+  line-height: $listHeight;
+}
+.list-icon {
+  height: $listSize;
+  width: $listSize;
+}
