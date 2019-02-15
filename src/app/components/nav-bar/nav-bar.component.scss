@@ -1,7 +1,7 @@
 
 $addSize: 30px;
 $listSize: 20px;
-$listHeight: 40px;
+$listHeight: 32px;
 
 %marginLeft {
   margin-left: 24px;
@@ -25,19 +25,45 @@ $listHeight: 40px;
 }
 .add {
   @extend %marginLeft;
+  display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  padding: 0 18px;
+  margin: 21px 0;
+  cursor:pointer;
 }
 .add-icon {
-  height: $addSize;
-  width: $addSize;
-  margin: 0 12px -12px 0;
+  border-radius: 50%;
+  margin-right: 8px;
+  transition: transform .2s ease-in-out;
+}
+.add-icon:hover {
+  transform: scale(1.15);
+  -webkit-transform: scale(1.15);
 }
 .list {
   @extend %marginLeft;
-  list-style: none;
 }
 .list li {
+  display: flex;
+  align-items: center;
+  flex-direction: row;
   height: $listHeight;
   line-height: $listHeight;
+  font-size: 14px;
+  color: #e6e6e6;
+  cursor: pointer;
+}
+multi
+.list li img {
+  margin-right: 10px;
+}
+.list li:hover {
+  @extend %hover;
+}
+.list .active {
+  @extend %active;
 }
 .list-icon {
   height: $listSize;
