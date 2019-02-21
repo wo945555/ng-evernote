@@ -31,4 +31,23 @@ export class NavItemsService {
   getNavItems(): Observable<Nav[]> {
     return of(NAV_ITEMS)
   }
+  setProperty(prop: string, val: any, option?: (string |string[])): Observable<Nav[]> {
+    return of(NAV_ITEMS.map(nav => {
+      let shouldSet = true;
+      if(option){
+        switch(Object.prototype.toString.call(option).replace(/\[object\s|\]/g,'')){
+          case 'Array':
+            shouldSet = (<string[]>option).some(opt => opt === nav.text);
+            break;
+          case 'String':
+            shouldSet = (option ===  nav.text)? true: false;
+            break;
+        }
+      }
+      if(shouldSet){
+        Object.defineProperty(nav,prop,{value: val});
+      } 
+      return nav
+    }))
+  }
 }
