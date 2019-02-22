@@ -70,12 +70,17 @@ $lightGrey: #e6e6e6;
   position: absolute;
   top: 50%;
   margin-top: -4px;
-  width: 14px;
-  height: 32px;
+  // width: 14px;
+  // height: 32px;
   // display: inline-block;
   // vertical-align: middle;
   fill: $lightGrey;
   cursor: pointer;
+  z-index: 99;
+}
+.list li .rotate {
+  -webkit-transform: rotate(90deg);
+  transform: rotate(90deg);
 }
 .list li img {
   margin-right: 10px;

@@ -13,27 +13,31 @@ import { NavItemsService } from '../../services/nav-items/nav-items.service'
 
 export class NavBarComponent implements OnInit {
   items: Nav[];
-  activeItem: String;
-  activeTrangle: String[];
-  collapseItems: String[] = ['Shortcuts', 'Notebooks'];
+  activeItem: string;
+  collapseItems: string[] = ['Shortcuts', 'Notebooks'];
   constructor(private navItemsService: NavItemsService ) { }
 
   ngOnInit() {
     this.getItems();
   }
   getItems(): void {
-    this.navItemsService.getNavItems()
+    this.navItemsService.setProperty('active', false, this.collapseItems)
       .subscribe(items => this.items = items);
   }
   onSelect(item: Nav): void {
     this.activeItem = item.text;
   }
-  isTriangleShow(text: String): Boolean {
+  isTriangleShow(text: string): Boolean {
     return this.collapseItems.some(v=>v === text);
   }
-  onTriangleClick(item: Nav): void {
+  onTriangleClick(text: string): void {
+    console.log(this.items)
     //该行展开/关闭
     //class旋转
-    //this.activeTrangle.map
+    this.items.forEach(item=>{
+      if(item.text === text){
+        item.active = !item.active;
+      }
+    })
   }
 }

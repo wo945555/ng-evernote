@@ -17,15 +17,15 @@
   </div>
   <ul class="list">
     <li *ngFor="let item of items"
-    [class.active]="item.text === activeItem"
-    (click)="onSelect(item)">
+    [class.active]="item.text === activeItem">
       <svg *ngIf="isTriangleShow(item.text)" 
        xmlns="http://www.w3.org/2000/svg" width="8" height="8" viewbox="0 0 8 8"
        class="multi"
-       click="onTriangleClick(item)">
+       [class.rotate]="item.active"
+       (click)="onTriangleClick(item.text)">
         <path d="M 2,0 l4,4 l-4,4 Z" fill-rule="evenodd" fill="#e6e6e6"></path>
       </svg>
-      <span>
+      <span (click)="onSelect(item)">
         <img class="list-icon" [src]="item.icon" alt="item.text">
         {{item.text }}
       </span>

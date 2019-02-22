@@ -45,7 +45,7 @@ export class NavItemsService {
         }
       }
       if(shouldSet){
-        Object.defineProperty(nav,prop,{value: val});
+        Object.defineProperty(nav,prop,{value: val, writable: true});
       } 
       return nav
     }))
