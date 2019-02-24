@@ -2,7 +2,6 @@
 $addSize: 30px;
 $listSize: 20px;
 $listHeight: 32px;
-$lightGrey: #e6e6e6;
 
 %marginLeft {
   margin-left: 24px;
@@ -26,7 +25,6 @@ $lightGrey: #e6e6e6;
 }
 .add {
   @extend %marginLeft;
-  display: -webkit-flex;
   display: flex;
   -webkit-box-align: center;
   -ms-flex-align: center;
@@ -44,43 +42,18 @@ $lightGrey: #e6e6e6;
   transform: scale(1.15);
   -webkit-transform: scale(1.15);
 }
-.list li {
-  position: relative;
-  display: -webkit-flex;
-  display: flex;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
+.list {
+  @extend %marginLeft;
 }
-.list li span{
-  display: webkit-flex;
+.list li {
   display: flex;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
   align-items: center;
   flex-direction: row;
   height: $listHeight;
   line-height: $listHeight;
   font-size: 14px;
-  color: $lightGrey;
-  padding: 0 8px 0 18px;
+  color: #e6e6e6;
   cursor: pointer;
-}
-.list li .multi {
-  position: absolute;
-  top: 50%;
-  margin-top: -4px;
-  // width: 14px;
-  // height: 32px;
-  // display: inline-block;
-  // vertical-align: middle;
-  fill: $lightGrey;
-  cursor: pointer;
-  z-index: 99;
-}
-.list li .rotate {
-  -webkit-transform: rotate(90deg);
-  transform: rotate(90deg);
 }
 .list li img {
   margin-right: 10px;
