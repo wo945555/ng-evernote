@@ -14,12 +14,12 @@ const httpOptions = {
 export class NotesService {
   private notesUrl = 'api/notes';
   constructor( private http: HttpClient ){
-    // getNoteBooks(): Observabel<string[]> {
-    //   return this.http.get<string[]>(this.notesUrl)
-    //     .pipe(
-    //       catchError(this.handleError<string[]>('getNoteBooks', []));
-    //     )
-    // }
+    getNoteBooks(): Observabel<string[]> {
+      return this.http.get<string[]>(this.notesUrl)
+        .pipe(
+          catchError(this.handleError<string[]>('getNoteBooks', []));
+        )
+    }
   }
   private handleError<T> (operators = 'operators', result?: T){
     return (error: any): Observable<T> => {
