@@ -2,9 +2,13 @@
 $addSize: 30px;
 $listSize: 20px;
 $listHeight: 32px;
+$margin-left: 24px;
 
-%marginLeft {
-  margin-left: 24px;
+%verticalMiddle {
+  display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
 }
 %active {
   background-color: #404040;
@@ -21,14 +25,11 @@ $listHeight: 32px;
   color: #fff;
 }
 .search {
-  @extend %marginLeft;
+  margin-left: $margin-left;
 }
 .add {
-  @extend %marginLeft;
-  display: flex;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
+  @extend %verticalMiddle;
+  margin-left: $margin-left;
   padding: 0 18px;
   margin: 21px 0;
   cursor:pointer;
@@ -42,12 +43,7 @@ $listHeight: 32px;
   transform: scale(1.15);
   -webkit-transform: scale(1.15);
 }
-.list {
-  @extend %marginLeft;
-}
 .list li {
-  display: flex;
-  align-items: center;
   flex-direction: row;
   height: $listHeight;
   line-height: $listHeight;
@@ -63,6 +59,19 @@ $listHeight: 32px;
 }
 .list .active {
   @extend %active;
+}
+.list-multi {
+  position: absolute;
+  left: 0;
+  width: 14px;
+  height: $listHeight;
+}
+.list-multi .rotate {
+  transform: rotate(90deg);
+}
+.list-item {
+  @extend %verticalMiddle;
+  margin-left: $margin-left;
 }
 .list-icon {
   height: $listSize;

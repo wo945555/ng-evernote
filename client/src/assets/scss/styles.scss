@@ -5,6 +5,9 @@ $button-bg: $green;
 $color: $white;
 
 //去除默认样式
+*, :before, :after{
+  box-sizing: inherit;
+}
 body {
   margin: 0;
   font-size: 14px;

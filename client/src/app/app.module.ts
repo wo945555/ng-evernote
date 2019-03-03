@@ -8,8 +8,6 @@ import { NavBarComponent } from './components/nav-bar/nav-bar.component';
 import { SearchComponent } from './components/search/search.component';
 import { NotesListComponent } from './components/notes-list/notes-list.component';
 
-import { HttpClientInMemoryWebApiModule } from 'angular-in-memory-web-api';
-import { InMemoryDataService }  from './services/in-memory-data/in-memory-data.service';
 @NgModule({
   declarations: [
     AppComponent,
@@ -21,9 +19,6 @@ import { InMemoryDataService }  from './services/in-memory-data/in-memory-data.s
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    HttpClientInMemoryWebApiModule.forRoot(
-      InMemoryDataService, { dataEncapsulation: false }
-    )
   ],
   providers: [],
   bootstrap: [AppComponent]

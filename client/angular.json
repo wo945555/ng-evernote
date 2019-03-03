@@ -61,11 +61,12 @@
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
-            "browserTarget": "Angular-evernote:build"
+            "browserTarget": "Angular-evernote:build",
+            "proxyConfig": "proxy.conf.json"
           },
           "configurations": {
             "production": {
-              "browserTarget": "Angular-evernote:build:production"
+              "browserTarget": "Angular-evernote:build:production",
             }
           }
         },
