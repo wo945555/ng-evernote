@@ -1,18 +1,11 @@
 import express from 'express';
+import bodyParser from 'body-parser';
+
+import { Note, NoteBook } from './interface/notesInterface'
 
 const app = express();
 
-interface Note {
-  id: number,
-  title: string,
-  tag: string,
-  content: string, //标签以及富文本json
-}
-interface NoteBook {
-  id: number,
-  nbName: string;
-  articles: Note[];
-}
+
 //默认笔记
 const WELCOME: Note = {
   id: 1,
@@ -55,5 +48,8 @@ app.get('/notes/list_note_books', (req, res) => {
   res.json(note_books);
 })
 
-
+app.get('/notes/search_notes', (req, res) => {
+  const sq = req.query.search;
+  
+})
 app.listen(8000, "localhost");

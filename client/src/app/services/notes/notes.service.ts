@@ -19,6 +19,8 @@ export class NotesService {
 
   constructor( private http: HttpClient ){}
 
+  
+
   getNoteBooks(): Observable<string[]> {
     console.log(this.noteBooksUrl)
     return this.http.get<string[]> (this.noteBooksUrl)
